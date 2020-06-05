@@ -7,16 +7,16 @@ function main(
   type,
   blendMode = BlendMode.normal,
   gradientMode = GradientMode.radial,
-  opacity = 1,
-  muted = false
+  mute = false,
+  solo = false
 ){
   this.min = Math.min(a, b);
   this.max = Math.max(a, b);
   this.type = type;
   this.blendMode = blendMode;
   this.gradientMode = gradientMode;
-  this.opacity = opacity;
-  this.muted = muted;
+  this.mute = mute;
+  this.solo = solo;
   this.evaluate = function(x, y) {
     const interpolant = 0;
     switch (this.mode) {
@@ -31,8 +31,11 @@ function main(
         break;
     }
     return {
+      blendMode: this.blendMode,
+      mute: this.mute,
+      solo: this.solo,
       type: this.type,
-      value: this.muted ? null : opacity * (this.min + (interpolant * (this.max - this.min)))
+      value: this.min + (interpolant * (this.max - this.min))
     }
   };
 }
