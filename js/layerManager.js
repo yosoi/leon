@@ -1,7 +1,8 @@
 function main() {
+  this.layers = [];
   this.evaluate = function(x, y) {
-    // TODO: Evaluate an ordered list of properties and return the results
-    return {}
+    // return blended properties object
+
   };
 }
 
