@@ -1,6 +1,12 @@
 import Leon from "./leon.js"
 
-$(document).ready(function(){
-  const elementId = "leon";
-  const leon = new Leon(elementId);
-})
+const leonId = "leon";
+const textId = "clickText";
+let leon = null;
+
+$(document).click(function() {
+  if (leon === null) {
+    $("#" + textId).hide();
+    leon = new Leon(leonId);
+  }
+});

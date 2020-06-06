@@ -6,7 +6,7 @@ function main(
   b,
   type,
   blendMode = BlendMode.normal,
-  gradientMode = GradientMode.radial,
+  gradientMode = GradientMode.vertical,
   opacity = 1,
   mute = false,
   solo = false
@@ -25,7 +25,7 @@ function main(
         interpolant = x;
         break;
       case GradientMode.vertical:
-        interpolant = y
+        interpolant = 1 - y;
         break;
       case GradientMode.radial:
         interpolant = 2 * Math.abs(Math.hypot(x - 0.5, y - 0.5));
