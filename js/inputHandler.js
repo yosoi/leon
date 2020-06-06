@@ -1,12 +1,18 @@
-function main(elementId, onpointerdown, onpointerup, onpointermove) {
+function main(elementId, onPointerDown, onPointerUp, onPointerMove) {
   const element = document.getElementById(elementId);
-  element.onpointerdown = onpointerdown;
-  element.onpointerup = onpointerup;
-  element.onpointermove = function(event){
+  const normalize = function(event, action) {
     const bounds = element.getBoundingClientRect();
-    const x = (event.x - bounds.left) / bounds.width;
-    const y = (event.y - bounds.top) / bounds.height;
-    onpointermove(x,y);
+    action(
+      (event.x - bounds.left) / bounds.width,
+      (event.y - bounds.top) / bounds.height
+    )
+  };
+  element.onpointerdown = function(event) {
+    normalize(event, onPointerDown);
+  };
+  element.onpointerup = onPointerUp;
+  element.onpointermove = function(event) {
+    normalize(event, onPointerMove);
   };
 }
 

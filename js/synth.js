@@ -1,24 +1,18 @@
+import LayerType from "./layerType.js"
+
 function main() {
-  //create a synth and connect it to the master output (your speakers)
-  const s = new Tone.Synth().toDestination();
-
-  //play a middle 'C' for the duration of an 8th note
-  s.triggerAttackRelease("C4", "8n");
-
+  this.synth = new Tone.Synth().toDestination();
   this.configure = function(settings) {
-    // TODO: Update WebAudio nodes using settings
-    console.log(settings[1]);
+    const pitch = settings[LayerType.pitch].value;
+    const volume = settings[LayerType.volume].value;
+    console.log(pitch, volume);
+    this.synth.setNote(pitch);
+    this.synth.volume.value = volume;
   };
-
-  this.on = function() {
-    // TODO: Turn note on
-    console.log("ON");
+  this.on = function(settings) {
+    this.synth.triggerAttack(settings[LayerType.pitch].value);
   };
-
-  this.off = function() {
-    // TODO: Turn note off
-    console.log("OFF");
-  };
+  this.off = () => this.synth.triggerRelease();
 }
 
 export default main

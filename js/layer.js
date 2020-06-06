@@ -30,6 +30,9 @@ function main(
       case GradientMode.radial:
         interpolant = 2 * Math.abs(Math.hypot(x - 0.5, y - 0.5));
         break;
+      case GradientMode.inverseRadial:
+        interpolant = 1 - (2 * Math.abs(Math.hypot(x - 0.5, y - 0.5)));
+        break;
     }
     interpolant = Math.max(0, Math.min(1, interpolant));
     return {

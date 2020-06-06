@@ -3,8 +3,8 @@ import LayerType from "./layerType.js"
 
 function main() {
   return new Layer(
+    -50,
     0,
-    1,
     LayerType.volume
   );
 }

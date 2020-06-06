@@ -3,8 +3,8 @@ import LayerType from "./layerType.js"
 
 function main() {
   return new Layer(
-    0,
-    1000,
+    100,
+    10000,
     LayerType.pitch
   );
 }
