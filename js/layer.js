@@ -28,9 +28,10 @@ function main(
         interpolant = y
         break;
       case GradientMode.radial:
-        interpolant = Math.abs(Math.hypot(x - 0.5, y - 0.5));
+        interpolant = 2 * Math.abs(Math.hypot(x - 0.5, y - 0.5));
         break;
     }
+    interpolant = Math.max(0, Math.min(1, interpolant));
     return {
       blendMode: this.blendMode,
       mute: this.mute,
