@@ -7,6 +7,7 @@ function main(
   type,
   blendMode = BlendMode.normal,
   gradientMode = GradientMode.radial,
+  opacity = 1,
   mute = false,
   solo = false
 ){
@@ -18,8 +19,8 @@ function main(
   this.mute = mute;
   this.solo = solo;
   this.evaluate = function(x, y) {
-    const interpolant = 0;
-    switch (this.mode) {
+    let interpolant = 0;
+    switch (this.gradientMode) {
       case GradientMode.horizontal:
         interpolant = x;
         break;

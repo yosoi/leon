@@ -3,9 +3,9 @@ function main(elementId, onpointerdown, onpointerup, onpointermove) {
   element.onpointerdown = onpointerdown;
   element.onpointerup = onpointerup;
   element.onpointermove = function(event){
-    let x = event.x;
-    let y = event.y;
-    // TODO: Return normalized position relative to element bounds
+    const bounds = element.getBoundingClientRect();
+    const x = (event.x - bounds.left) / bounds.width;
+    const y = (event.y - bounds.top) / bounds.height;
     onpointermove(x,y);
   };
 }

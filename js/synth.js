@@ -3,7 +3,7 @@ function main() {
 
   this.configure = function(settings) {
     // TODO: Update WebAudio nodes using settings
-    console.log(settings);
+    console.log(settings[1]);
   };
 
   this.on = function() {
