@@ -3,7 +3,8 @@ import Accordion from 'react-bootstrap/Accordion'
 import Layer from './Layer.js'
 
 function LayerStack(props) {
-  const layers = props.layerManager.layers.map((layer, index) =>
+  const layerManager = props.layerManager;
+  const layers = layerManager.layers.map((layer, index) =>
     <Layer
       eventKey={index + 1}
       key={index}

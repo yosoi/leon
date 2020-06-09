@@ -9,7 +9,11 @@ function LayerDropdown(props) {
     </Dropdown.Item>
   );
   return (
-    <DropdownButton size="lg" title="Add layer">
+    <DropdownButton
+      size="lg"
+      title="Add Layer"
+      variant="outline-primary"
+    >
       {dropdownItems}
     </DropdownButton>
   );
