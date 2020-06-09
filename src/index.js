@@ -5,10 +5,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import LayerManager from './layers/layerManager.js'
+
+console.log("hi");
+
+const layerManager = new LayerManager();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App layerManager={layerManager}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

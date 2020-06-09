@@ -1,0 +1,10 @@
+#leon {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#leon:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}

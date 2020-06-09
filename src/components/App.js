@@ -1,9 +1,41 @@
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Controller from './Controller.js'
+import LayerDropdown from './LayerDropdown.js'
+import LayerStack from './LayerStack.js'
+import LayerTypes from '../layers/layerTypes.js'
+import Navbar from 'react-bootstrap/Navbar'
 import React from 'react';
-import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
 
-function App() {
+function App(props) {
   return (
-    <Button variant="primary">Primary</Button>
+    <div>
+      <Container>
+        <Row>
+          <Col>
+            <Navbar>
+              <Navbar.Brand>Leon</Navbar.Brand>
+            </Navbar>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Controller id="leon"/>
+          </Col>
+        </Row>
+        <Row className="mb-3">
+          <Col>
+            <LayerDropdown layerTypes={LayerTypes}/>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <LayerStack layerManager={props.layerManager}/>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 
