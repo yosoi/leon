@@ -6,14 +6,14 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import LayerManager from './layers/layerManager.js'
+import Leon from './leon.js'
 
-console.log("hi");
-
-const layerManager = new LayerManager();
+const leonId = "leon";
+let leon = new Leon(leonId);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App layerManager={layerManager}/>
+    <App leon={leon}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Controller from './Controller.js'
 import LayerDropdown from './LayerDropdown.js'
 import LayerStack from './LayerStack.js'
-import LayerTypes from '../layers/layerTypes.js'
+import LayerTypes from '../enums/layerType.js'
 import Navbar from 'react-bootstrap/Navbar'
 import React from 'react';
 import Row from 'react-bootstrap/Row'
@@ -36,7 +36,7 @@ function App(props) {
         </Row>
         <Row>
           <Col>
-            <LayerStack layerManager={props.layerManager}/>
+            <LayerStack layerManager={props.leon}/>
           </Col>
         </Row>
       </Container>

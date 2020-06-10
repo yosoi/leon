@@ -1,7 +1,8 @@
-import LayerType from "./layerType.js"
+import LayerType from "../enums/layerType.js"
+import * as Tone from "tone";
 
 function main() {
-  this.synth = new Tone.Synth().toDestination();
+  this.synth = new Tone.Synth().toMaster();
   this.configure = function(settings) {
     const pitch = settings[LayerType.pitch].value;
     const volume = settings[LayerType.volume].value;

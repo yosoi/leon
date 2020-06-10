@@ -1,9 +1,9 @@
-import GradientMode from "./gradientMode.js"
-import InputHandler from "./inputHandler.js"
-import LayerManager from "./layerManager.js"
-import PitchLayer from "./pitchLayer.js"
-import Synth from "./synth.js"
-import VolumeLayer from "./volumeLayer.js"
+import GradientMode from "./enums/gradientMode.js"
+import InputHandler from "./controller/inputHandler.js"
+import LayerManager from "./layers/layerManager.js"
+import PitchLayer from "./layers/pitchLayer.js"
+import Synth from "./synthesizer/synth.js"
+import VolumeLayer from "./layers/volumeLayer.js"
 
 function main(elementId) {
   const synth = new Synth();

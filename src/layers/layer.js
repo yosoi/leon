@@ -1,5 +1,5 @@
-import BlendMode from "./blendMode.js"
-import GradientMode from "./gradientMode.js"
+import BlendMode from "../enums/blendMode.js"
+import GradientMode from "../enums/gradientMode.js"
 
 function main(
   a,

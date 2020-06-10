@@ -1,5 +1,5 @@
 import Layer from "./layer.js"
-import LayerType from "./layerType.js"
+import LayerType from "../enums/layerType.js"
 
 function main() {
   return new Layer(
