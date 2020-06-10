@@ -1,2 +1,2 @@
 # leon
-An experimental theramin-like instrument.
+A theramin.
