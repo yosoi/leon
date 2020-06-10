@@ -5,11 +5,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import LayerManager from './layers/layerManager.js'
 import Leon from './leon.js'
 
-const leonId = "leon";
-let leon = new Leon(leonId);
+let leon = new Leon();
 
 ReactDOM.render(
   <React.StrictMode>

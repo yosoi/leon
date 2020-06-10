@@ -3,12 +3,13 @@ import Container from 'react-bootstrap/Container'
 import Controller from './Controller.js'
 import LayerDropdown from './LayerDropdown.js'
 import LayerStack from './LayerStack.js'
-import LayerTypes from '../enums/layerType.js'
 import Navbar from 'react-bootstrap/Navbar'
 import React from 'react';
 import Row from 'react-bootstrap/Row'
 
 function App(props) {
+  const inputHandler = props.leon.inputHandler;
+  const layerManager = props.leon.layerManager;
   return (
     <div>
       <Container>
@@ -21,7 +22,7 @@ function App(props) {
         </Row>
         <Row>
           <Col>
-            <Controller id="leon"/>
+            <Controller inputHandler={inputHandler}/>
           </Col>
         </Row>
         <Row>
@@ -31,12 +32,12 @@ function App(props) {
         </Row>
         <Row className="mb-3">
           <Col>
-            <LayerDropdown layerTypes={LayerTypes}/>
+            <LayerDropdown />
           </Col>
         </Row>
         <Row>
           <Col>
-            <LayerStack layerManager={props.leon}/>
+            <LayerStack layerManager={layerManager}/>
           </Col>
         </Row>
       </Container>

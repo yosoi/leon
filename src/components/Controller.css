@@ -1,9 +1,9 @@
-#leon {
+#controller {
   width: 100%;
   background-color: #ddd;
 }
 
-#leon:after {
+#controller:after {
   content: "";
   display: block;
   padding-bottom: 100%;
