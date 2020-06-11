@@ -4,10 +4,13 @@ import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
 import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
+import Col from 'react-bootstrap/Col'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import FormControl from 'react-bootstrap/FormControl'
 import InputGroup from 'react-bootstrap/InputGroup'
+import Row from 'react-bootstrap/Row'
 
 function Layer(props) {
   const layer = props.layer;
@@ -21,10 +24,9 @@ function Layer(props) {
             variant="light"
             className="mr-2"
           >
-          <svg className="bi bi-caret-right-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-          </svg>
-
+            <svg className="bi bi-caret-right-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+            </svg>
           </Accordion.Toggle>
           <InputGroup className="mr-2">
             <InputGroup.Prepend>
@@ -38,8 +40,8 @@ function Layer(props) {
             </InputGroup.Prepend>
             <FormControl
               type="text"
-              placeholder={layer.name}
-              aria-label={layer.name}
+              placeholder={layer.type}
+              aria-label={layer.type}
               aria-describedby="btnGroupAddon"
             />
           </InputGroup>
@@ -47,13 +49,6 @@ function Layer(props) {
             <Button variant="outline-secondary">S</Button>
             <Button variant="outline-secondary">M</Button>
           </ButtonGroup>
-          <DropdownButton
-            className="mr-2"
-            title="Normal"
-            variant="outline-secondary"
-          >
-            <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-          </DropdownButton>
           <ButtonGroup className="mr-2">
             <Button variant="outline-secondary">
               <svg className="bi bi-caret-up-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +71,66 @@ function Layer(props) {
       </Card.Header>
       <Accordion.Collapse eventKey={props.eventKey}>
         <Card.Body>
-          {props.layer.name}
+          <Container>
+            <Row className="mb-2">
+              <Col>
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>
+                      Min
+                    </InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    placeholder="0"
+                  />
+                </InputGroup>
+              </Col>
+              <Col>
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>
+                      Max
+                    </InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl
+                    placeholder="1"
+                  />
+                </InputGroup>
+              </Col>
+            </Row>
+            <Row className="mb-2">
+              <Col>
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>
+                      Gradient Mode
+                    </InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <DropdownButton
+                    title="Horizontal"
+                    variant="secondary"
+                  >
+                  </DropdownButton>
+                </InputGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <InputGroup>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>
+                      Blend Mode
+                    </InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <DropdownButton
+                    title="Normal"
+                    variant="secondary"
+                  >
+                  </DropdownButton>
+                </InputGroup>
+              </Col>
+            </Row>
+          </Container>
         </Card.Body>
       </Accordion.Collapse>
     </Card>
