@@ -10,6 +10,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import FormControl from 'react-bootstrap/FormControl'
 import InputGroup from 'react-bootstrap/InputGroup'
+import LayerType from '../enums/layerType.js'
 import Row from 'react-bootstrap/Row'
 
 function Layer(props) {
@@ -40,8 +41,8 @@ function Layer(props) {
             </InputGroup.Prepend>
             <FormControl
               type="text"
-              placeholder={layer.type}
-              aria-label={layer.type}
+              placeholder={LayerType.properties[layer.type].name}
+              aria-label="Layer name field"
               aria-describedby="btnGroupAddon"
             />
           </InputGroup>
@@ -81,7 +82,7 @@ function Layer(props) {
                     </InputGroup.Text>
                   </InputGroup.Prepend>
                   <FormControl
-                    placeholder="0"
+                    placeholder={layer.min}
                   />
                 </InputGroup>
               </Col>
@@ -93,7 +94,7 @@ function Layer(props) {
                     </InputGroup.Text>
                   </InputGroup.Prepend>
                   <FormControl
-                    placeholder="1"
+                    placeholder={layer.max}
                   />
                 </InputGroup>
               </Col>
