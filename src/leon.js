@@ -9,9 +9,9 @@ function main() {
   const synth = new Synth();
   this.layerManager = new LayerManager();
   const pitch = new PitchLayer();
-  pitch.gradientMode = GradientMode.radial;
+  pitch.gradientMode = GradientMode.RADIAL;
   const volume = new VolumeLayer();
-  volume.gradientMode = GradientMode.inverseRadial;
+  volume.gradientMode = GradientMode.INV_RADIAL;
   this.layerManager.layers.push(pitch);
   this.layerManager.layers.push(volume);
   this.inputHandler = new InputHandler(

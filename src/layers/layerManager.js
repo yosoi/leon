@@ -11,19 +11,19 @@ function main() {
         const outputResult = outputResults[inputResult.type];
         if (outputResult !== undefined) {
           switch (outputResult.blendMode) {
-            case BlendMode.max:
+            case BlendMode.MAX:
               inputResult.value = Math.max(
                 inputResult.value,
                 outputResult.value
               );
               break;
-            case BlendMode.min:
+            case BlendMode.MIN:
               inputResult.value = Math.min(
                 inputResult.value,
                 outputResult.value
               );
               break;
-            case BlendMode.normal:
+            case BlendMode.NORMAL:
             default:
               inputResult.value = outputResult.value;
           }

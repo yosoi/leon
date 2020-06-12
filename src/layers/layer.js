@@ -21,16 +21,16 @@ function main(
   this.evaluate = function(x, y) {
     let interpolant = 0;
     switch (this.gradientMode) {
-      case GradientMode.horizontal:
+      case GradientMode.HORIZONTAL:
         interpolant = x;
         break;
-      case GradientMode.vertical:
+      case GradientMode.VERTICAL:
         interpolant = 1 - y;
         break;
-      case GradientMode.radial:
+      case GradientMode.RADIAL:
         interpolant = 2 * Math.abs(Math.hypot(x - 0.5, y - 0.5));
         break;
-      case GradientMode.inverseRadial:
+      case GradientMode.INV_RADIAL:
         interpolant = 1 - (2 * Math.abs(Math.hypot(x - 0.5, y - 0.5)));
         break;
       default:

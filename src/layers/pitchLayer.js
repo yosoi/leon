@@ -5,7 +5,7 @@ function main() {
   return new Layer(
     100,
     10000,
-    LayerType.pitch
+    LayerType.PITCH
   );
 }
 
