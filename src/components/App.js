@@ -27,7 +27,7 @@ function App(props) {
         </Row>
         <Row className="mb-3">
           <Col>
-            <LayerDropdown />
+            <LayerDropdown layerManager={layerManager}/>
           </Col>
         </Row>
         <Row>
