@@ -5,7 +5,7 @@ function main() {
   return new Layer(
     -50,
     0,
-    LayerType.volume
+    LayerType.VOLUME
   );
 }
 

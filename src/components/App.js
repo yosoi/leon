@@ -25,11 +25,6 @@ function App(props) {
             <Controller inputHandler={inputHandler}/>
           </Col>
         </Row>
-        <Row>
-          <Col>
-
-          </Col>
-        </Row>
         <Row className="mb-3">
           <Col>
             <LayerDropdown />

@@ -7,7 +7,7 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import Leon from './leon.js'
 
-let leon = new Leon();
+const leon = new Leon();
 
 ReactDOM.render(
   <React.StrictMode>

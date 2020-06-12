@@ -1,4 +1,14 @@
 export default Object.freeze({
-  "volume": 1,
-  "pitch": 2
+  VOLUME: 1,
+  PITCH: 2,
+  properties: {
+    1: {
+      name: "Volume",
+      value: 1
+    },
+    2: {
+      name: "Pitch",
+      value: 2
+    }
+  }
 });
