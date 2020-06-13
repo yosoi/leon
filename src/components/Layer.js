@@ -15,6 +15,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import LayerType from '../enums/layerType.js'
 import RightIcon from './icons/rightIcon.js'
 import Row from 'react-bootstrap/Row'
+import SoloMuteButtonGroup from './SoloMuteButtonGroup.js'
 import UpIcon from './icons/upIcon.js'
 
 function Layer(props) {
@@ -43,10 +44,7 @@ function Layer(props) {
               aria-label="Layer name field"
             />
           </InputGroup>
-          <ButtonGroup className="mr-2">
-            <Button variant="outline-secondary">S</Button>
-            <Button variant="outline-secondary">M</Button>
-          </ButtonGroup>
+          <SoloMuteButtonGroup />
           <ButtonGroup className="mr-2">
             <Button variant="outline-secondary">
               <UpIcon />
