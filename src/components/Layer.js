@@ -1,5 +1,6 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion'
+import BlendModeDropdown from './BlendModeDropdown.js'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
@@ -8,15 +9,13 @@ import CloseIcon from './icons/closeIcon.js'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import DownIcon from './icons/downIcon.js'
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
 import FormControl from 'react-bootstrap/FormControl'
+import GradientModeDropdown from './GradientModeDropdown.js'
 import InputGroup from 'react-bootstrap/InputGroup'
 import LayerType from '../enums/layerType.js'
 import RightIcon from './icons/rightIcon.js'
 import Row from 'react-bootstrap/Row'
 import UpIcon from './icons/upIcon.js'
-import VolumeIcon from './icons/volumeIcon.js'
 
 function Layer(props) {
   const layer = props.layer;
@@ -98,11 +97,7 @@ function Layer(props) {
                       Gradient Mode
                     </InputGroup.Text>
                   </InputGroup.Prepend>
-                  <DropdownButton
-                    title="Horizontal"
-                    variant="secondary"
-                  >
-                  </DropdownButton>
+                  <GradientModeDropdown layer={layer}/>
                 </InputGroup>
               </Col>
             </Row>
@@ -114,11 +109,7 @@ function Layer(props) {
                       Blend Mode
                     </InputGroup.Text>
                   </InputGroup.Prepend>
-                  <DropdownButton
-                    title="Normal"
-                    variant="secondary"
-                  >
-                  </DropdownButton>
+                  <BlendModeDropdown layer={layer}/>
                 </InputGroup>
               </Col>
             </Row>
