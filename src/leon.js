@@ -1,3 +1,4 @@
+import BlendMode from "./enums/blendMode.js"
 import GradientMode from "./enums/gradientMode.js"
 import InputHandler from "./controller/inputHandler.js"
 import LayerManager from "./layers/layerManager.js"
@@ -9,8 +10,10 @@ function main() {
   const synth = new Synth();
   this.layerManager = new LayerManager();
   const pitch = new PitchLayer();
+  pitch.blendMode = BlendMode.NORMAL;
   pitch.gradientMode = GradientMode.RADIAL;
   const volume = new VolumeLayer();
+  volume.blendMode = BlendMode.NORMAL;
   volume.gradientMode = GradientMode.INV_RADIAL;
   this.layerManager.layers.push(pitch);
   this.layerManager.layers.push(volume);
