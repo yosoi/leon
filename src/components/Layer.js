@@ -28,8 +28,7 @@ function Layer(props) {
             as={Button}
             eventKey={props.eventKey}
             variant="light"
-            className="mr-2"
-          >
+            className="mr-2">
             <RightIcon />
           </Accordion.Toggle>
           <InputGroup className="mr-2">
@@ -41,10 +40,9 @@ function Layer(props) {
             <FormControl
               type="text"
               placeholder={LayerType.properties[layer.type].name}
-              aria-label="Layer name field"
-            />
+              aria-label="Layer name field"/>
           </InputGroup>
-          <SoloMuteButtonGroup />
+          <SoloMuteButtonGroup layer={layer}/>
           <ButtonGroup className="mr-2">
             <Button variant="outline-secondary">
               <UpIcon />
@@ -69,9 +67,7 @@ function Layer(props) {
                       Min
                     </InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl
-                    placeholder={layer.min}
-                  />
+                  <FormControl placeholder={layer.min}/>
                 </InputGroup>
               </Col>
               <Col>
@@ -81,9 +77,7 @@ function Layer(props) {
                       Max
                     </InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl
-                    placeholder={layer.max}
-                  />
+                  <FormControl placeholder={layer.max}/>
                 </InputGroup>
               </Col>
             </Row>

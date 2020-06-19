@@ -1,20 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 
-function SoloMuteButtonGroup() {
-  const [data, setData] = useState([]);
+function SoloMuteButtonGroup({layer}) {
+  const [activeButtons, setActiveButtons] = useState([]);
+  useEffect(() => {
+    let newActiveButtons = [];
+    if (layer.mute) newActiveButtons.push("mute");
+    if (layer.solo) newActiveButtons.push("solo");
+    setActiveButtons(newActiveButtons);
+  }, [layer.mute, layer.solo])
   return (
     <ToggleButtonGroup
       className="mr-2"
-      onChange={(d) => setData(d)}
+      onChange={(newActiveButtons) => {
+        layer.mute = newActiveButtons.includes("mute")
+        layer.solo = newActiveButtons.includes("solo")
+        setActiveButtons(newActiveButtons);
+      }}
       type="checkbox"
-      value={data}
-    >
-      <ToggleButton value={1} variant="outline-secondary">S</ToggleButton>
-      <ToggleButton value={2} variant="outline-secondary">M</ToggleButton>
+      value={activeButtons}>
+      <ToggleButton
+        value={"solo"}
+        variant="outline-secondary">
+        S
+      </ToggleButton>
+      <ToggleButton
+        value={"mute"}
+        variant="outline-secondary">
+        M
+      </ToggleButton>
     </ToggleButtonGroup>
   );
+
+  // const [data, setData] = useState([]);
+  // return (
+  //   <ToggleButtonGroup
+  //     className="mr-2"
+  //     onChange={(d) => {
+  //
+  //       console.log(d);
+  //       setData(d);
+  //     }}
+  //     type="checkbox"
+  //     value={data}
+  //   >
+  //     <ToggleButton value={"solo"} variant="outline-secondary">S</ToggleButton>
+  //     <ToggleButton value={"mute"} variant="outline-secondary">M</ToggleButton>
+  //   </ToggleButtonGroup>
+  // );
 }
 
 export default SoloMuteButtonGroup
