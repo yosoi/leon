@@ -2,6 +2,15 @@ import BlendMode from "../enums/blendMode.js"
 
 function main() {
   this.layers = [];
+  this.close = (index) => {
+    console.log("close");
+  };
+  this.moveDown = (index) => {
+    console.log("down");
+  };
+  this.moveUp = (index) => {
+    console.log("up");
+  };
   this.evaluate = function(x, y) {
     const inputResults = this.layers.map(layer => layer.evaluate(x, y));
     const solo = inputResults.some(inputResult => inputResult.solo);

@@ -11,7 +11,9 @@ const leon = new Leon();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App leon={leon}/>
+    <App
+      inputHandler={leon.inputHandler}
+      layerManager={leon.layerManager}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

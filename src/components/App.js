@@ -7,9 +7,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import React from 'react';
 import Row from 'react-bootstrap/Row'
 
-function App({leon}) {
-  const inputHandler = leon.inputHandler;
-  const layerManager = leon.layerManager;
+function App({inputHandler, layerManager}) {
   return (
     <div>
       <Container>
