@@ -1,4 +1,3 @@
-import React from 'react';
 import Accordion from 'react-bootstrap/Accordion'
 import BlendModeDropdown from './BlendModeDropdown.js'
 import Button from 'react-bootstrap/Button'
@@ -13,6 +12,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import GradientModeDropdown from './GradientModeDropdown.js'
 import InputGroup from 'react-bootstrap/InputGroup'
 import LayerType from '../enums/layerType.js'
+import React, { useState } from 'react';
 import RightIcon from './icons/rightIcon.js'
 import Row from 'react-bootstrap/Row'
 import SoloMuteButtonGroup from './SoloMuteButtonGroup.js'
@@ -20,16 +20,20 @@ import UpIcon from './icons/upIcon.js'
 
 function Layer(props) {
   const layer = props.layer;
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Card>
       <Card.Header>
         <ButtonToolbar>
           <Accordion.Toggle
             as={Button}
+            className="mr-2"
             eventKey={props.eventKey}
-            variant="light"
-            className="mr-2">
-            <RightIcon />
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+            variant="light">
+            {isOpen ? <DownIcon /> : <RightIcon />}
           </Accordion.Toggle>
           <InputGroup className="mr-2">
             <InputGroup.Prepend>
