@@ -1,19 +1,32 @@
-import React from 'react';
 import Accordion from 'react-bootstrap/Accordion'
-import Layer from './Layer.js'
+import LayerEditor from './LayerEditor.js'
+import React, { useEffect, useState } from 'react';
 
-function LayerStack(props) {
-  const layerManager = props.layerManager;
-  const layers = layerManager.layers.map((layer, index) =>
-    <Layer
-      eventKey={index + 1}
-      key={index}
-      layer={layer}
-    />
-  );
+function LayerStack({layerManager}) {
+  const [layers, setLayers] = useState(layerManager.layers);
+  useEffect(() => {
+    console.log("layers updated");
+  }, layerManager.layers)
   return (
     <Accordion>
-      {layers}
+      {layers.map((layer, index) =>
+        <LayerEditor
+          canMoveDown={index < layers.length - 1}
+          canMoveUp={index > 0}
+          eventKey={index + 1}
+          key={index}
+          layer={layer}
+          onClose={() => {
+            console.log("close");
+          }}
+          onMoveDown={() => {
+            console.log("down");
+          }}
+          onMoveUp={() => {
+            console.log("up");
+          }}>
+        </LayerEditor>
+      )}
     </Accordion>
   );
 }
