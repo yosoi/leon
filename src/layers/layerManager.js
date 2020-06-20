@@ -3,12 +3,15 @@ import BlendMode from "../enums/blendMode.js"
 function main() {
   this.layers = [];
   this.close = (index) => {
+    this.layers = this.layers.filter((layer, i) => i !== index);
     console.log("close");
   };
   this.moveDown = (index) => {
+    this.layers = [];
     console.log("down");
   };
   this.moveUp = (index) => {
+    this.layers = [];
     console.log("up");
   };
   this.evaluate = function(x, y) {

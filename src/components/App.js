@@ -4,10 +4,15 @@ import Controller from './Controller.js'
 import LayerDropdown from './LayerDropdown.js'
 import LayerStack from './LayerStack.js'
 import Navbar from 'react-bootstrap/Navbar'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row'
 
-function App({inputHandler, layerManager}) {
+function App({leon}) {
+  const [layers, setLayers] = useState([]);
+  useEffect(() => {
+    console.log("~~~~leon's layers changed");
+    setLayers(leon.layerManager.layers)
+  }, [leon.layerManager.layers])
   return (
     <div>
       <Container>
@@ -20,17 +25,30 @@ function App({inputHandler, layerManager}) {
         </Row>
         <Row>
           <Col>
-            <Controller inputHandler={inputHandler}/>
+            <Controller inputHandler={leon.inputHandler}/>
           </Col>
         </Row>
         <Row className="mb-3">
           <Col>
-            <LayerDropdown layerManager={layerManager}/>
+            <LayerDropdown layerManager={leon.layerManager}/>
           </Col>
         </Row>
         <Row>
           <Col>
-            <LayerStack layerManager={layerManager}/>
+            <LayerStack
+              layers={layers}
+              onClose={(index) => {
+                leon.layerManager.close(index);
+                setLayers(leon.layerManager.layers);
+              }}
+              onMoveDown={(index) => {
+                leon.layerManager.moveDown(index);
+                setLayers(leon.layerManager.layers);
+              }}
+              onMoveUp={(index) => {
+                leon.layerManager.moveUp(index)
+                setLayers(leon.layerManager.layers);
+              }}/>
           </Col>
         </Row>
       </Container>
