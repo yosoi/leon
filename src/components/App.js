@@ -10,7 +10,6 @@ import Row from 'react-bootstrap/Row'
 function App({leon}) {
   const [layers, setLayers] = useState([]);
   useEffect(() => {
-    console.log("~~~~leon's layers changed");
     setLayers(leon.layerManager.layers)
   }, [leon.layerManager.layers])
   return (

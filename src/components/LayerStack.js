@@ -1,11 +1,8 @@
 import Accordion from 'react-bootstrap/Accordion'
 import LayerEditor from './LayerEditor.js'
-import React, { useEffect } from 'react';
+import React from 'react';
 
 function LayerStack({layers, onClose, onMoveUp, onMoveDown}) {
-  useEffect(() => {
-    console.log("stack layers changed");
-  }, [layers]);
   const editors = layers.map((layer, index) =>
     <LayerEditor
       canMoveDown={index < layers.length - 1}
