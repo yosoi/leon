@@ -30,7 +30,11 @@ function App({leon}) {
         </Row>
         <Row className="mb-3">
           <Col>
-            <LayerDropdown layerManager={leon.layerManager}/>
+            <LayerDropdown
+              onItemClick={(newLayer) => {
+                leon.layerManager.addLayer(newLayer);
+                setLayers(leon.layerManager.layers);
+              }}/>
           </Col>
         </Row>
         <Row>

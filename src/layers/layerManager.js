@@ -3,6 +3,11 @@ import BlendMode from "../enums/blendMode.js"
 
 function main() {
   this.layers = [];
+  this.addLayer = (layer) => {
+    const buffer = this.layers.slice();
+    buffer.push(layer);
+    this.layers = buffer;
+  };
   this.close = (index) => {
     this.layers = this.layers.filter((layer, i) => i !== index);
   };
