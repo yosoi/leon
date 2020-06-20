@@ -73,21 +73,27 @@ function LayerEditor(props) {
               <Col>
                 <InputGroup>
                   <InputGroup.Prepend>
-                    <InputGroup.Text>
-                      Min
-                    </InputGroup.Text>
+                    <InputGroup.Text>Min</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl placeholder={layer.min}/>
+                  <FormControl
+                    defaultValue={layer.min}
+                    onChange={(event) => {
+                      layer.max = event.target.value;
+                    }}
+                    placeholder={layer.min}/>
                 </InputGroup>
               </Col>
               <Col>
                 <InputGroup>
                   <InputGroup.Prepend>
-                    <InputGroup.Text>
-                      Max
-                    </InputGroup.Text>
+                    <InputGroup.Text>Max</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl placeholder={layer.max}/>
+                  <FormControl
+                    defaultValue={layer.max}
+                    onChange={(event) => {
+                      layer.max = event.target.value;
+                    }}
+                    placeholder={layer.max}/>
                 </InputGroup>
               </Col>
             </Row>
