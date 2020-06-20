@@ -18,7 +18,7 @@ import Row from 'react-bootstrap/Row'
 import SoloMuteButtonGroup from './SoloMuteButtonGroup.js'
 import UpIcon from './icons/upIcon.js'
 
-function Layer(props) {
+function LayerEditor(props) {
   const layer = props.layer;
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -48,15 +48,21 @@ function Layer(props) {
           </InputGroup>
           <SoloMuteButtonGroup layer={layer}/>
           <ButtonGroup className="mr-2">
-            <Button variant="outline-secondary">
+            <Button
+              disabled={!props.canMoveUp}
+              onClick={props.onMoveUp}
+              variant="outline-secondary">
               <UpIcon />
             </Button>
-            <Button variant="outline-secondary">
+            <Button
+              disabled={!props.canMoveDown}
+              onClick={props.onMoveDown}
+              variant="outline-secondary">
               <DownIcon />
             </Button>
           </ButtonGroup>
-          <Button variant="light">
-            <CloseIcon />
+          <Button onClick={props.onClose}variant="light">
+            <CloseIcon/>
           </Button>
         </ButtonToolbar>
       </Card.Header>
@@ -67,21 +73,27 @@ function Layer(props) {
               <Col>
                 <InputGroup>
                   <InputGroup.Prepend>
-                    <InputGroup.Text>
-                      Min
-                    </InputGroup.Text>
+                    <InputGroup.Text>Min</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl placeholder={layer.min}/>
+                  <FormControl
+                    defaultValue={layer.min}
+                    onChange={(event) => {
+                      layer.max = event.target.value;
+                    }}
+                    placeholder={layer.min}/>
                 </InputGroup>
               </Col>
               <Col>
                 <InputGroup>
                   <InputGroup.Prepend>
-                    <InputGroup.Text>
-                      Max
-                    </InputGroup.Text>
+                    <InputGroup.Text>Max</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl placeholder={layer.max}/>
+                  <FormControl
+                    defaultValue={layer.max}
+                    onChange={(event) => {
+                      layer.max = event.target.value;
+                    }}
+                    placeholder={layer.max}/>
                 </InputGroup>
               </Col>
             </Row>
@@ -116,4 +128,4 @@ function Layer(props) {
   );
 }
 
-export default Layer;
+export default LayerEditor;

@@ -1,7 +1,22 @@
+import 'array.prototype.move';
 import BlendMode from "../enums/blendMode.js"
 
 function main() {
   this.layers = [];
+  this.addLayer = (layer) => {
+    const buffer = this.layers.slice();
+    buffer.push(layer);
+    this.layers = buffer;
+  };
+  this.close = (index) => {
+    this.layers = this.layers.filter((layer, i) => i !== index);
+  };
+  this.moveDown = (index) => {
+    this.layers = this.layers.slice().move(index, index + 1);
+  };
+  this.moveUp = (index) => {
+    this.layers = this.layers.slice().move(index, index - 1);
+  };
   this.evaluate = function(x, y) {
     const inputResults = this.layers.map(layer => layer.evaluate(x, y));
     const solo = inputResults.some(inputResult => inputResult.solo);

@@ -7,11 +7,9 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import Leon from './leon.js'
 
-const leon = new Leon();
-
 ReactDOM.render(
   <React.StrictMode>
-    <App leon={leon}/>
+    <App leon={new Leon()}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

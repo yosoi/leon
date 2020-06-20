@@ -5,8 +5,8 @@ function main(
   a,
   b,
   type,
-  blendMode = BlendMode.normal,
-  gradientMode = GradientMode.vertical,
+  blendMode = BlendMode.NORMAL,
+  gradientMode = GradientMode.VERTICAL,
   opacity = 1,
   mute = false,
   solo = false
