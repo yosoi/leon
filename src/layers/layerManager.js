@@ -1,18 +1,16 @@
+import 'array.prototype.move';
 import BlendMode from "../enums/blendMode.js"
 
 function main() {
   this.layers = [];
   this.close = (index) => {
     this.layers = this.layers.filter((layer, i) => i !== index);
-    console.log("close");
   };
   this.moveDown = (index) => {
-    this.layers = [];
-    console.log("down");
+    this.layers = this.layers.slice().move(index, index + 1);
   };
   this.moveUp = (index) => {
-    this.layers = [];
-    console.log("up");
+    this.layers = this.layers.slice().move(index, index - 1);
   };
   this.evaluate = function(x, y) {
     const inputResults = this.layers.map(layer => layer.evaluate(x, y));
