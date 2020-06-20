@@ -14,10 +14,11 @@ function BlendModeDropdown({layer}) {
       as="button"
       eventKey={data.value}
       onClick={() => {
-        setBlendMode(data.value);
+        layer.blendMode = data.value;
+        setBlendMode(layer.blendMode);
       }}>
         {data.name}
-      </Dropdown.Item>
+    </Dropdown.Item>
   );
   return (
     <DropdownButton
