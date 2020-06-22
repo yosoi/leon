@@ -9,11 +9,13 @@ function SaveLoadButtonGroup() {
     <ButtonGroup
       className="mr-2">
       <Button
+        disabled
         variant="light">
         <LoadIcon/>
         <span className="ml-2">Open</span>
       </Button>
       <Button
+        disabled
         variant="light">
         <SaveIcon />
         <span className="ml-2">Download</span>

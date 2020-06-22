@@ -11,6 +11,7 @@ function MuteButton() {
       <ToggleButton
         checked={muted}
         className="rounded-circle"
+        disabled
         onChange={(e) => {
           setMuted(e.currentTarget.checked)
         }}
