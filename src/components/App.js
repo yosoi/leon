@@ -1,3 +1,4 @@
+import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Controller from './Controller.js'
@@ -29,31 +30,44 @@ function App({leon}) {
             <Controller inputHandler={leon.inputHandler}/>
           </Col>
         </Row>
-        <Row className="mb-3">
+        <Row className="py-3">
           <Col>
-            <LayerDropdown
-              onItemClick={(newLayer) => {
-                leon.layerManager.addLayer(newLayer);
-                setLayers(leon.layerManager.layers);
-              }}/>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <LayerStack
-              layers={layers}
-              onClose={(index) => {
-                leon.layerManager.close(index);
-                setLayers(leon.layerManager.layers);
-              }}
-              onMoveDown={(index) => {
-                leon.layerManager.moveDown(index);
-                setLayers(leon.layerManager.layers);
-              }}
-              onMoveUp={(index) => {
-                leon.layerManager.moveUp(index)
-                setLayers(leon.layerManager.layers);
-              }}/>
+            <Row className="mb-2">
+              <Col>
+                <Card className="bg-light pt-3 pb-2 px-3">
+                  <Row className="justify-content-between">
+                    <Col className="col-auto">
+                      <h2>Layer Editor</h2>
+                    </Col>
+                    <Col className="col-auto">
+                      <LayerDropdown
+                        onItemClick={(newLayer) => {
+                          leon.layerManager.addLayer(newLayer);
+                          setLayers(leon.layerManager.layers);
+                        }}/>
+                    </Col>
+                  </Row>
+                </Card>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <LayerStack
+                  layers={layers}
+                  onClose={(index) => {
+                    leon.layerManager.close(index);
+                    setLayers(leon.layerManager.layers);
+                  }}
+                  onMoveDown={(index) => {
+                    leon.layerManager.moveDown(index);
+                    setLayers(leon.layerManager.layers);
+                  }}
+                  onMoveUp={(index) => {
+                    leon.layerManager.moveUp(index)
+                    setLayers(leon.layerManager.layers);
+                  }}/>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>

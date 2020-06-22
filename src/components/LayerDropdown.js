@@ -22,6 +22,7 @@ function LayerDropdown({onItemClick}) {
   );
   return (
     <DropdownButton
+      alignRight
       size="md"
       title="Add Layer"
       variant="primary">
