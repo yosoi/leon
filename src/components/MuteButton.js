@@ -10,6 +10,7 @@ function MuteButton() {
     <ButtonGroup toggle>
       <ToggleButton
         checked={muted}
+        className="rounded-circle"
         onChange={(e) => {
           setMuted(e.currentTarget.checked)
         }}

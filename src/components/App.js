@@ -19,7 +19,7 @@ function App({leon}) {
   return (
     <div>
       <Container>
-        <Row>
+        <Row className="my-3">
           <Col>
             <Navbar>
               <Navbar.Brand className="mr-auto">

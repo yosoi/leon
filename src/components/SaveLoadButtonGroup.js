@@ -9,12 +9,14 @@ function SaveLoadButtonGroup() {
     <ButtonGroup
       className="mr-2">
       <Button
-        variant="outline-secondary">
-        Load
+        variant="light">
+        <LoadIcon/>
+        <span className="ml-2">Load</span>
       </Button>
       <Button
-        variant="outline-secondary">
-        Save
+        variant="light">
+        <SaveIcon />
+        <span className="ml-2">Save</span>
       </Button>
     </ButtonGroup>
   );

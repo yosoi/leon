@@ -15,7 +15,7 @@ function LayerDropdown({onItemClick}) {
       <span>
         {data.icon}
       </span>
-      <span>
+      <span className="float-right">
         {data.name}
       </span>
     </Dropdown.Item>
@@ -25,7 +25,7 @@ function LayerDropdown({onItemClick}) {
       alignRight
       size="md"
       title="Add Layer"
-      variant="primary">
+      variant="primary rounded-pill">
       {dropdownItems}
     </DropdownButton>
   );
