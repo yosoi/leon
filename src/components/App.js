@@ -34,7 +34,7 @@ function App({leon}) {
             <Controller inputHandler={leon.inputHandler}/>
           </Col>
         </Row>
-        <Row className="py-3">
+        <Row className="pb-3">
           <Col>
             <Row className="mb-2">
               <Col>
@@ -42,7 +42,7 @@ function App({leon}) {
                   <Row className="justify-content-between">
                     <Col className="col-auto align-self-center">
                       <span className="h3">
-                        Layer Editor
+                        Layers
                       </span>
                     </Col>
                     <Col className="col-auto">

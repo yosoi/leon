@@ -108,8 +108,6 @@ function LayerEditor(props) {
                   <GradientModeDropdown layer={layer}/>
                 </InputGroup>
               </Col>
-            </Row>
-            <Row>
               <Col>
                 <InputGroup>
                   <InputGroup.Prepend>

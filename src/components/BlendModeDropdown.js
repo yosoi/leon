@@ -1,7 +1,7 @@
 import BlendMode from '../enums/blendMode.js'
+import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
 function BlendModeDropdown({layer}) {
   const [blendMode, setBlendMode] = useState(layer.blendMode)
@@ -21,11 +21,20 @@ function BlendModeDropdown({layer}) {
     </Dropdown.Item>
   );
   return (
-    <DropdownButton
-      title={BlendMode.properties[blendMode].name}
-      variant="secondary">
-      {dropdownItems}
-    </DropdownButton>
+    <Dropdown
+      block
+      className="flex-grow-1"
+      drop="up">
+      <Dropdown.Toggle
+        block
+        variant="outline-secondary">
+        {BlendMode.properties[blendMode].name}
+      </Dropdown.Toggle>
+      <Dropdown.Menu
+        alignRight>
+        {dropdownItems}
+      </Dropdown.Menu>
+    </Dropdown>
   );
 }
 

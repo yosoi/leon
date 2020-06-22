@@ -1,7 +1,7 @@
+import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
 import GradientMode from '../enums/gradientMode.js'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
 function GradientModeDropdown({layer}) {
   const [gradientMode, setGradientMode] = useState(layer.gradientMode)
@@ -21,11 +21,20 @@ function GradientModeDropdown({layer}) {
     </Dropdown.Item>
   );
   return (
-    <DropdownButton
-      title={GradientMode.properties[gradientMode].name}
-      variant="secondary">
-      {dropdownItems}
-    </DropdownButton>
+    <Dropdown
+      block
+      className="flex-grow-1"
+      drop="up">
+      <Dropdown.Toggle
+        block
+        variant="outline-secondary">
+        {GradientMode.properties[gradientMode].name}
+      </Dropdown.Toggle>
+      <Dropdown.Menu
+        alignRight>
+        {dropdownItems}
+      </Dropdown.Menu>
+    </Dropdown>
   );
 }
 
