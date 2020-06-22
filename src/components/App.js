@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Controller from './Controller.js'
 import LayerDropdown from './LayerDropdown.js'
 import LayerStack from './LayerStack.js'
+import MuteButton from './MuteButton.js'
 import Navbar from 'react-bootstrap/Navbar'
 import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row'
@@ -18,7 +19,8 @@ function App({leon}) {
         <Row>
           <Col>
             <Navbar>
-              <Navbar.Brand>Leon</Navbar.Brand>
+              <Navbar.Brand className="mr-auto">Leon</Navbar.Brand>
+              <MuteButton />
             </Navbar>
           </Col>
         </Row>

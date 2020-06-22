@@ -16,7 +16,7 @@ class Controller extends React.Component {
     return (
       <div
         id="controller"
-        className="mb-3"
+        className="border border-primary mb-3 rounded"
         ref={this.controller}
         onPointerUp={
           event => {
