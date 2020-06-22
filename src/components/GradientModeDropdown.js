@@ -1,6 +1,6 @@
-import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import GradientMode from '../enums/gradientMode.js'
+import './ModeDropdown.css';
 import React, { useEffect, useState } from 'react'
 
 function GradientModeDropdown({layer}) {
@@ -27,6 +27,7 @@ function GradientModeDropdown({layer}) {
       drop="up">
       <Dropdown.Toggle
         block
+        className="mode-dropdown"
         variant="outline-secondary">
         {GradientMode.properties[gradientMode].name}
       </Dropdown.Toggle>

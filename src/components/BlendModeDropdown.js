@@ -1,6 +1,6 @@
 import BlendMode from '../enums/blendMode.js'
-import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
+import './ModeDropdown.css';
 import React, { useEffect, useState } from 'react'
 
 function BlendModeDropdown({layer}) {
@@ -27,6 +27,7 @@ function BlendModeDropdown({layer}) {
       drop="up">
       <Dropdown.Toggle
         block
+        className="mode-dropdown"
         variant="outline-secondary">
         {BlendMode.properties[blendMode].name}
       </Dropdown.Toggle>
