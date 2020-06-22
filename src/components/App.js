@@ -1,3 +1,4 @@
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
@@ -8,6 +9,7 @@ import MuteButton from './MuteButton.js'
 import Navbar from 'react-bootstrap/Navbar'
 import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row'
+import SaveLoadButtonGroup from './SaveLoadButtonGroup.js'
 
 function App({leon}) {
   const [layers, setLayers] = useState([]);
@@ -20,7 +22,9 @@ function App({leon}) {
         <Row>
           <Col>
             <Navbar>
-              <Navbar.Brand className="mr-auto">Leon</Navbar.Brand>
+              <Navbar.Brand className="mr-auto">
+                Leon | <span className="text-muted">a theramin</span>
+              </Navbar.Brand>
               <MuteButton />
             </Navbar>
           </Col>
@@ -34,17 +38,22 @@ function App({leon}) {
           <Col>
             <Row className="mb-2">
               <Col>
-                <Card className="bg-light pt-3 pb-2 px-3">
+                <Card className="pt-3 pb-3 px-3 border border-light">
                   <Row className="justify-content-between">
-                    <Col className="col-auto">
-                      <h2>Layer Editor</h2>
+                    <Col className="col-auto align-self-center">
+                      <span className="h3">
+                        Layer Editor
+                      </span>
                     </Col>
                     <Col className="col-auto">
-                      <LayerDropdown
-                        onItemClick={(newLayer) => {
-                          leon.layerManager.addLayer(newLayer);
-                          setLayers(leon.layerManager.layers);
-                        }}/>
+                      <ButtonToolbar>
+                        <SaveLoadButtonGroup/>
+                        <LayerDropdown
+                          onItemClick={(newLayer) => {
+                            leon.layerManager.addLayer(newLayer);
+                            setLayers(leon.layerManager.layers);
+                          }}/>
+                      </ButtonToolbar>
                     </Col>
                   </Row>
                 </Card>

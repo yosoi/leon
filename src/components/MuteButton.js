@@ -14,7 +14,7 @@ function MuteButton() {
           setMuted(e.currentTarget.checked)
         }}
         type="checkbox"
-        variant={muted ? "danger" : "light"}
+        variant={muted ? "danger" : "outline-secondary"}
         >
         { muted ? <MuteIcon /> : <VolumeIcon />}
       </ToggleButton>
