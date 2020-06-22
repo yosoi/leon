@@ -23,8 +23,7 @@ function BlendModeDropdown({layer}) {
   return (
     <DropdownButton
       title={BlendMode.properties[blendMode].name}
-      variant="secondary"
-    >
+      variant="secondary">
       {dropdownItems}
     </DropdownButton>
   );

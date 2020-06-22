@@ -11,8 +11,7 @@ function LayerDropdown({onItemClick}) {
       onClick={() => {
         const newLayer = data.instance();
         onItemClick(newLayer);
-      }}
-    >
+      }}>
       <span>
         {data.icon}
       </span>
@@ -25,8 +24,7 @@ function LayerDropdown({onItemClick}) {
     <DropdownButton
       size="lg"
       title="Add Layer"
-      variant="outline-primary"
-    >
+      variant="outline-primary">
       {dropdownItems}
     </DropdownButton>
   );

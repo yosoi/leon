@@ -32,23 +32,6 @@ function SoloMuteButtonGroup({layer}) {
       </ToggleButton>
     </ToggleButtonGroup>
   );
-
-  // const [data, setData] = useState([]);
-  // return (
-  //   <ToggleButtonGroup
-  //     className="mr-2"
-  //     onChange={(d) => {
-  //
-  //       console.log(d);
-  //       setData(d);
-  //     }}
-  //     type="checkbox"
-  //     value={data}
-  //   >
-  //     <ToggleButton value={"solo"} variant="outline-secondary">S</ToggleButton>
-  //     <ToggleButton value={"mute"} variant="outline-secondary">M</ToggleButton>
-  //   </ToggleButtonGroup>
-  // );
 }
 
 export default SoloMuteButtonGroup

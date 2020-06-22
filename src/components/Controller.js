@@ -34,8 +34,8 @@ class Controller extends React.Component {
             const bounds = this.getBounds();
             inputHandler.move(bounds, event.clientX, event.clientY);
           }
-        }
-      ></div>
+        }>
+      </div>
     );
   }
 }

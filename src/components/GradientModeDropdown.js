@@ -23,8 +23,7 @@ function GradientModeDropdown({layer}) {
   return (
     <DropdownButton
       title={GradientMode.properties[gradientMode].name}
-      variant="secondary"
-    >
+      variant="secondary">
       {dropdownItems}
     </DropdownButton>
   );
