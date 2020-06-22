@@ -35,7 +35,7 @@ function LayerEditor(props) {
             variant="light">
             {isOpen ? <DownIcon /> : <RightIcon />}
           </Accordion.Toggle>
-          <InputGroup className="mr-2">
+          <InputGroup className="mr-2 flex-grow-1">
             <InputGroup.Prepend>
               <InputGroup.Text>
                 {LayerType.properties[layer.type].icon}

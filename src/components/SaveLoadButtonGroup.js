@@ -11,12 +11,12 @@ function SaveLoadButtonGroup() {
       <Button
         variant="light">
         <LoadIcon/>
-        <span className="ml-2">Load</span>
+        <span className="ml-2">Open</span>
       </Button>
       <Button
         variant="light">
         <SaveIcon />
-        <span className="ml-2">Save</span>
+        <span className="ml-2">Download</span>
       </Button>
     </ButtonGroup>
   );
